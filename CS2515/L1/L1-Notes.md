@@ -41,7 +41,7 @@
 
 ## What we will use
 
-**Python3**
+**Python 3**
 
 - Understand library functions
 - Learn how to implement structures properly
