@@ -53,8 +53,8 @@
 - Using things thought during CS113 - Foundations of Computer Science (Reference past material if needed)
 - There is no text book there are some recommended reading
 
-  - Data Structures and Algorithms in Python, Goodrich, Tamassia and Goldwasser, Wiley
+  - [Data Structures and Algorithms in Python, Goodrich, Tamassia and Goldwasser, Wiley](http://87.120.36.5/main/2481000/d32f9c32d0c494496dcda7843f0c5b43/Michael%20H.%20Goldwasser%2C%20Roberto%20Tamassia%2C%20Michael%20T.%20Goodrich%20-%20Data%20Structures%20and%20Algorithms%20in%20Python-John%20Wiley%20%26%20Sons%20%282018%29.epub)
 
-  - Problem Solving with Algorithms and Data Structures, Miller and Ranum
+  - [Problem Solving with Algorithms and Data Structures, Miller and Ranum](http://87.120.36.5/main/2061000/ae007a68c3c7fe1e5abecbad87d16703/Miller%20B.N.%2C%20Ranum%20D.L.%20-%20Problem%20Solving%20with%20Algorithms%20and%20Data%20Structures%20Using%20Python.%20Release%203.0.pdf)
 
-  - Data Structures and Algorithms with Python, Lee and Hubbard, Springer
+  - [Data Structures and Algorithms with Python, Lee and Hubbard, Springer](http://87.120.36.5/main/1310000/0b6a4d4811cce0d8ca288cada2c21872/%28Undergraduate%20Topics%20in%20Computer%20Science%29%20Kent%20D.%20Lee%2C%20Steve%20Hubbard%20-%20Data%20Structures%20and%20Algorithms%20with%20Python-Springer%20%282015%29.pdf)
