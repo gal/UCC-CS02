@@ -50,7 +50,7 @@
 ## Module Requirements
 
 - Most labs wont be hand-in but are important for honing skill
-- Using things thought during CS113 - Foundations of Computer Science (Reference past material if needed)
+- Using things thought during CS113 - Foundations of Computer Science ([Reference past material if needed](https://bit.ly/2GmCHPM))
 - There is no text book there are some recommended reading
 
   - [Data Structures and Algorithms in Python, Goodrich, Tamassia and Goldwasser, Wiley](http://87.120.36.5/main/2481000/d32f9c32d0c494496dcda7843f0c5b43/Michael%20H.%20Goldwasser%2C%20Roberto%20Tamassia%2C%20Michael%20T.%20Goodrich%20-%20Data%20Structures%20and%20Algorithms%20in%20Python-John%20Wiley%20%26%20Sons%20%282018%29.epub)
