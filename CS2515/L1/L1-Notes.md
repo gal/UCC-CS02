@@ -8,9 +8,9 @@
 - How long does it take
 - How much memory and recourses does it use
 
-### Whats the point
+## Whats the point
 
-#### Proper Implementation
+### Proper Implementation
 
 1.  Programs must be correct
 
@@ -20,14 +20,14 @@
     - Programs that take too long to run are useless
     - Understand the implication of choosing certain library functions in regard to runtime and memory use
     - Implications of different desing pattern choices
-      - what might be easier for you to code may be worse for the programs runtime overall
+      - What might be easier for you to code may be worse for the programs runtime overall
 
-#### Efficiency
+### Efficiency
 
 1.  Faster machines mean users expect to solve bigger problems faster
 2.  Some problems have known limits in their efficiency
 
-### What is the point (pt.2)
+## What is the point (pt.2)
 
 1.  You must advertise and explain code to other programmers _in ways they will understand_
 
