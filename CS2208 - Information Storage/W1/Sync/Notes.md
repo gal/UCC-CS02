@@ -1,8 +1,10 @@
-<!-- TODO: Fix hierarchy structure and fill in missed details from lecture slides -->
-
 # Lecture 2 - Synchronous 1
 
-**Semester 1**: _Relational_ Databases using **SQL**<br>**Semester 2**: _Non-Relational_ Databases using **No-SQL**
+[TOC]
+
+---
+
+**Semester 1**: _Relational Databases_ using **SQL**<br>**Semester 2**: _Non-Relational Databases_ using **No-SQL**
 
 ---
 
@@ -12,8 +14,8 @@
   - They are sets or multisets (bags)
 - Tables are flat
   - Not nested attributes
-- Tables do not presceibe how they are implemented/stired on the disk
-  <!-- - TODO: -->
+- Tables do not prescribe how they are implemented/stored on the disk
+  - This is called physical data independence
 
 ---
 
@@ -40,7 +42,7 @@
       ]
   ```
 
-  - What operations could we do effieciently using a row major order?
+  - What operations could we do efficiently using a row major order?
 
   #### Column Major Order
 
@@ -53,10 +55,10 @@
       ]
   ```
 
-  - What operations could we do effieciently using a column major order?
+  - What operations could we do efficiently using a column major order?
 
 - What happens when you alter a table?
-- **Physical Data Independance** - the logical definition of the data remains unchanged, even when we make changes to the actual implementation
+- **Physical Data Independence** - the logical definition of the data remains unchanged, even when we make changes to the actual implementation
 
 ---
 
@@ -161,7 +163,7 @@ SELECT DISTINCT Category
 FROM Product
 ```
 
-- Eliminate duplicates in the ouput
+- Eliminate duplicates in the output
 
 #### Order By
 
@@ -560,7 +562,8 @@ Country IN (SELECT Country FROM Suppliers);
 - Deletion of tuples from a given relation/table
 - Insertion of new tuples into a given relation/table
 - Updating of values in some tuples in a given relation/table
-  <br>
+
+<br>
 
 ##### Deletion
 
@@ -630,7 +633,8 @@ INSERT INTO table1 SELECT * FROM table1
 ```
 
 - Otherwise queries like this would cause problems
-  <br>
+
+<br>
 
 ##### Updates
 
