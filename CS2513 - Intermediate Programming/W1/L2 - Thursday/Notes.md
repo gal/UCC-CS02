@@ -1,5 +1,20 @@
 # CS2513 Week 1 - Lecture 2
 
+- [CS2513 Week 1 - Lecture 2](#cs2513-week-1---lecture-2)
+  - [Module Contents](#module-contents)
+  - [Object Oriented Programming](#object-oriented-programming)
+    - [Advantages of OOP](#advantages-of-oop)
+    - [Disadvantages of OOP](#disadvantages-of-oop)
+    - [Procedural Oriented Programming vs Object Oriented Programming](#procedural-oriented-programming-vs-object-oriented-programming)
+    - [Features of OOP](#features-of-oop)
+  - [The Abstract Data Type (ADT)](#the-abstract-data-type-adt)
+    - [Data Structure Key Points](#data-structure-key-points)
+    - [Abstract Data Type Key Points](#abstract-data-type-key-points)
+      - [The Two Parts of an ADT](#the-two-parts-of-an-adt)
+      - [Advantages of an ADT](#advantages-of-an-adt)
+  - [The Formal Concepts in OOP](#the-formal-concepts-in-oop)
+  - [Python vs Purely Object Oriented Languages](#python-vs-purely-object-oriented-languages)
+
 ---
 
 ## Module Contents
@@ -51,7 +66,7 @@
 
 <br>
 
-### Differences between Procedural Oriented Programming and Object Oriented Programming
+### Procedural Oriented Programming vs Object Oriented Programming
 
 - **Procedural Programming** creates a step by step program that guides the application through a sequence of instructions
   - Each instruction is executed in order
