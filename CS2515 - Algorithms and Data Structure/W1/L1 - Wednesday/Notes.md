@@ -7,6 +7,7 @@
     - [Efficiency](#efficiency)
   - [What is the point (Cont.)](#what-is-the-point-cont)
   - [What we will use](#what-we-will-use)
+    - [Python 3](#python-3)
   - [Module Requirements](#module-requirements)
 
 ---
@@ -25,40 +26,40 @@
 
 ### Proper Implementation
 
-1.  Programs must be correct
+1. Programs must be correct
 
-    - Not just bug free but working as best as possible
+   - Not just bug free but working as best as possible
 
-2.  Programs should be efficient
-    - Programs that take too long to run are useless
-    - Understand the implication of choosing certain library functions in regard to runtime and memory use
-    - Implications of different desing pattern choices
-      - What might be easier for you to code may be worse for the programs runtime overall
+2. Programs should be efficient
+   - Programs that take too long to run are useless
+   - Understand the implication of choosing certain library functions in regard to runtime and memory use
+   - Implications of different desing pattern choices
+     - What might be easier for you to code may be worse for the programs runtime overall
 
 ### Efficiency
 
-1.  Faster machines mean users expect to solve bigger problems faster
-2.  Some problems have known limits in their efficiency
+1. Faster machines mean users expect to solve bigger problems faster
+2. Some problems have known limits in their efficiency
 
 ---
 
 ## What is the point (Cont.)
 
-1.  You must advertise and explain code to other programmers _in ways they will understand_
+1. You must advertise and explain code to other programmers _in ways they will understand_
 
-    - State the Abstract Data Types used
-      - Experienced Programmers will know how to interact with them
-    - State the data structures and algorithms you've implemented
+   - State the Abstract Data Types used
+     - Experienced Programmers will know how to interact with them
+   - State the data structures and algorithms you've implemented
 
-2.  You should not break standard design patterns and principles
-    - Understand the specificed ways you're meant to interact with the data
-    - Don't interact with it in any others ways
+2. You should not break standard design patterns and principles
+   - Understand the specificed ways you're meant to interact with the data
+   - Don't interact with it in any others ways
 
 ---
 
 ## What we will use
 
-**Python 3**
+### Python 3
 
 - Understanding library functions
 - Learn how to implement code and data structures properly
