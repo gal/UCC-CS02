@@ -1,6 +1,17 @@
-# Week 1 - Intro
+# CS2515 Week 1 - Intro
 
-### Abstract Data Types
+- [CS2515 Week 1 - Intro](#cs2515-week-1---intro)
+  - [Abstract Data Types](#abstract-data-types)
+  - [What is the point](#what-is-the-point)
+    - [Proper Implementation](#proper-implementation)
+    - [Efficiency](#efficiency)
+  - [What is the point (Cont.)](#what-is-the-point-cont)
+  - [What we will use](#what-we-will-use)
+  - [Module Requirements](#module-requirements)
+
+---
+
+## Abstract Data Types
 
 **Doesnt necessarily specify how they should be used**
 
@@ -8,7 +19,9 @@
 - How long does it take
 - How much memory and recourses does it use
 
-## Whats the point
+---
+
+## What is the point
 
 ### Proper Implementation
 
@@ -27,31 +40,37 @@
 1.  Faster machines mean users expect to solve bigger problems faster
 2.  Some problems have known limits in their efficiency
 
-## What is the point (pt.2)
+---
+
+## What is the point (Cont.)
 
 1.  You must advertise and explain code to other programmers _in ways they will understand_
 
     - State the Abstract Data Types used
-      - Programmers know how to interact with them
+      - Experienced Programmers will know how to interact with them
     - State the data structures and algorithms you've implemented
 
-2.  You should not break standard design patterns
-    - Understand the specificed ways to interact with data
-    - Dont interact with it in any others ways to ease maintainability
+2.  You should not break standard design patterns and principles
+    - Understand the specificed ways you're meant to interact with the data
+    - Don't interact with it in any others ways
+
+---
 
 ## What we will use
 
 **Python 3**
 
-- Understand library functions
-- Learn how to implement structures properly
+- Understanding library functions
+- Learn how to implement code and data structures properly
 - Practice coding skills regularly
+
+---
 
 ## Module Requirements
 
-- Most labs wont be hand-in but are important for honing skill
-- Using things thought during CS113 - Foundations of Computer Science ([Reference past material if needed](https://bit.ly/2GmCHPM))
-- There is no text book there are some recommended reading
+- Most lab classes wont be a hand-in style assignment but they are still important for growing your skills and understanding
+- Using things thought during CS113 - Foundations of Computer Science II ([Reference past material if needed](https://bit.ly/3l0GQrG))
+- There is no text book here are some recommended reading if you feel the need
 
   - [Data Structures and Algorithms in Python, Goodrich, Tamassia and Goldwasser, Wiley](http://87.120.36.5/main/2481000/d32f9c32d0c494496dcda7843f0c5b43/Michael%20H.%20Goldwasser%2C%20Roberto%20Tamassia%2C%20Michael%20T.%20Goodrich%20-%20Data%20Structures%20and%20Algorithms%20in%20Python-John%20Wiley%20%26%20Sons%20%282018%29.epub)
 
