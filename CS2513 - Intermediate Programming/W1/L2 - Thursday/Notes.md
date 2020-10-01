@@ -39,6 +39,8 @@
   - Previously we have been thought **Procedural Programming**
 - e.g. The **ball** _bounced_, The **coffee** was _poured_, The **car** got _dirty_
 
+<br>
+
 ### Advantages of OOP
 
 - Allows parallel code development for groups of developers
