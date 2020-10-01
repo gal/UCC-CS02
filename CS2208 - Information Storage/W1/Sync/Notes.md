@@ -2,8 +2,7 @@
 
 # Lecture 2 - Synchronous 1
 
-**Semester 1**: _Relational_ Databases using **SQL**
-**Semester 2**: _Non-Relational_ Databases using **No-SQL**
+**Semester 1**: _Relational_ Databases using **SQL**<br>**Semester 2**: _Non-Relational_ Databases using **No-SQL**
 
 ---
 
