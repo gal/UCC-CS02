@@ -347,6 +347,7 @@ DROP PRIMARY KEY;
 ### Example: Quiz
 
 <br>
+
 #### Quiz Database Structure
 
 ##### Quiz Table
@@ -372,6 +373,7 @@ DROP PRIMARY KEY;
 | ... |        ...        |     ...     |     ...     |
 
 <br>
+
 #### Quiz Database Schema
 
 ```SQL
