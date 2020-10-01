@@ -2,57 +2,57 @@
 
 - [CS2208 Week 1 - Synchronous](#cs2208-week-1---synchronous)
   - [Relational Databases](#relational-databases)
-    - [Table Implementation](#table-implementation)
-      - [Row Major Order](#row-major-order)
-      - [Column Major Order](#column-major-order)
-    - [SQL Examples](#sql-examples)
-      - [Example: Selection Query](#example-selection-query)
-        - [Base Table](#base-table)
-        - [Query](#query)
-        - [Output Table](#output-table)
-      - [Example: Projection Query](#example-projection-query)
-        - [Base Table](#base-table-1)
-        - [Query](#query-1)
-        - [Output Table](#output-table-1)
-    - [SQL Query Functionality](#sql-query-functionality)
-      - [Selections](#selections)
-      - [Joins](#joins)
-    - [SQL Keywords](#sql-keywords)
-      - [Like](#like)
-      - [Distinct](#distinct)
-      - [Order By](#order-by)
-    - [SQL Database Functionality](#sql-database-functionality)
-      - [Selecting Data](#selecting-data)
-      - [Updating Data](#updating-data)
-      - [Inserting Data](#inserting-data)
-      - [Deleting Data](#deleting-data)
-    - [The MySQL Server](#the-mysql-server)
-      - [Command Line Interface](#command-line-interface)
-    - [Tables](#tables)
-      - [Primary Key](#primary-key)
-      - [Delete Primary Key](#delete-primary-key)
-    - [Example: Quiz](#example-quiz)
-      - [Quiz Database Structure](#quiz-database-structure)
-        - [Quiz Table](#quiz-table)
-        - [Question Table](#question-table)
-        - [Answer Table](#answer-table)
-      - [Quiz Database Schema](#quiz-database-schema)
-    - [Further SQL Details](#further-sql-details)
-      - [Null Values](#null-values)
-      - [Aggregate Functions](#aggregate-functions)
-        - [Example: Aggregate Function](#example-aggregate-function)
-        - [Aggregate Functions - Group By](#aggregate-functions---group-by)
-      - [Aggregate Functions (Cont.)](#aggregate-functions-cont)
-        - [Aggregate Functions - Having Clause](#aggregate-functions---having-clause)
-        - [Null Values and Aggregates](#null-values-and-aggregates)
-        - [IN Operator](#in-operator)
-        - [Exists Operator](#exists-operator)
-        - [Nested Subqueries](#nested-subqueries)
-      - [Modification of the Database](#modification-of-the-database)
-        - [Deletion](#deletion)
-        - [Insertion](#insertion)
-        - [Updates](#updates)
-        - [Destroying or Altering Relations](#destroying-or-altering-relations)
+  - [Table Implementation](#table-implementation)
+    - [Row Major Order](#row-major-order)
+    - [Column Major Order](#column-major-order)
+  - [SQL Examples](#sql-examples)
+    - [Example: Selection Query](#example-selection-query)
+      - [Base Table](#base-table)
+      - [Query](#query)
+      - [Output Table](#output-table)
+    - [Example: Projection Query](#example-projection-query)
+      - [Base Table](#base-table-1)
+      - [Query](#query-1)
+      - [Output Table](#output-table-1)
+  - [SQL Query Functionality](#sql-query-functionality)
+    - [Selections](#selections)
+    - [Joins](#joins)
+  - [SQL Keywords](#sql-keywords)
+    - [Like](#like)
+    - [Distinct](#distinct)
+    - [Order By](#order-by)
+  - [SQL Database Functionality](#sql-database-functionality)
+    - [Selecting Data](#selecting-data)
+    - [Updating Data](#updating-data)
+    - [Inserting Data](#inserting-data)
+    - [Deleting Data](#deleting-data)
+  - [The MySQL Server](#the-mysql-server)
+    - [Command Line Interface](#command-line-interface)
+  - [Tables](#tables)
+    - [Primary Key](#primary-key)
+    - [Delete Primary Key](#delete-primary-key)
+  - [Example: Quiz](#example-quiz)
+    - [Quiz Database Structure](#quiz-database-structure)
+      - [Quiz Table](#quiz-table)
+      - [Question Table](#question-table)
+      - [Answer Table](#answer-table)
+    - [Quiz Database Schema](#quiz-database-schema)
+  - [Further SQL Details](#further-sql-details)
+    - [Null Values](#null-values)
+    - [Aggregate Functions](#aggregate-functions)
+      - [Example: Aggregate Function](#example-aggregate-function)
+      - [Aggregate Functions - Group By](#aggregate-functions---group-by)
+    - [Aggregate Functions (Cont.)](#aggregate-functions-cont)
+      - [Aggregate Functions - Having Clause](#aggregate-functions---having-clause)
+      - [Null Values and Aggregates](#null-values-and-aggregates)
+      - [IN Operator](#in-operator)
+      - [Exists Operator](#exists-operator)
+      - [Nested Subqueries](#nested-subqueries)
+    - [Modification of the Database](#modification-of-the-database)
+      - [Deletion](#deletion)
+      - [Insertion](#insertion)
+      - [Updates](#updates)
+      - [Destroying or Altering Relations](#destroying-or-altering-relations)
 
 ---
 
@@ -71,7 +71,7 @@
 
 ---
 
-### Table Implementation
+## Table Implementation
 
 - How would you implement this?
   | cname | country | no_employees | for_profit |
@@ -83,7 +83,7 @@
 
   - 2D Array
 
-  #### Row Major Order
+  ### Row Major Order
 
   ```SQL
   table=[
@@ -96,7 +96,7 @@
 
   - What operations could we do efficiently using a row major order?
 
-  #### Column Major Order
+  ### Column Major Order
 
   ```SQL
   table=[
@@ -114,11 +114,11 @@
 
 ---
 
-### SQL Examples
+## SQL Examples
 
-#### Example: Selection Query
+### Example: Selection Query
 
-##### Base Table
+#### Base Table
 
 |    PName    |  Price   |  Category   | Manufacturer |
 | :---------: | :------: | :---------: | :----------: |
@@ -127,7 +127,7 @@
 | SingleTouch | \$149.99 | Photography |    Canon     |
 | MultiTouch  | \$203.99 |  Household  |   Hitachi    |
 
-##### Query
+#### Query
 
 ```SQL
 SELECT *
@@ -135,7 +135,7 @@ FROM Product
 WHERE Category = "Gadgets"
 ```
 
-##### Output Table
+#### Output Table
 
 |   PName    |  Price  | Category | Manufacturer |
 | :--------: | :-----: | :------: | :----------: |
@@ -144,9 +144,9 @@ WHERE Category = "Gadgets"
 
 <br>
 
-#### Example: Projection Query
+### Example: Projection Query
 
-##### Base Table
+#### Base Table
 
 |    PName    |  Price   |  Category   | Manufacturer |
 | :---------: | :------: | :---------: | :----------: |
@@ -155,7 +155,7 @@ WHERE Category = "Gadgets"
 | SingleTouch | \$149.99 | Photography |    Canon     |
 | MultiTouch  | \$203.99 |  Household  |   Hitachi    |
 
-##### Query
+#### Query
 
 ```SQL
 SELECT PName, Price, Manufacturer
@@ -163,7 +163,7 @@ FROM Product
 WHERE Category = "Gadgets"
 ```
 
-##### Output Table
+#### Output Table
 
 |   PName    |  Price  | Category | Manufacturer |
 | :--------: | :-----: | :------: | :----------: |
@@ -172,16 +172,16 @@ WHERE Category = "Gadgets"
 
 ---
 
-### SQL Query Functionality
+## SQL Query Functionality
 
-#### Selections
+### Selections
 
 ```SQL
 
 SELECT * FROM Product WHERE Price > 100.0
 ```
 
-#### Joins
+### Joins
 
 ```SQL
 SELECT pname, price
@@ -191,9 +191,9 @@ WHERE manufacturer = cname AND country="Japan" AND price < 150
 
 ---
 
-### SQL Keywords
+## SQL Keywords
 
-#### Like
+### Like
 
 ```SQL
 SELECT *
@@ -206,7 +206,7 @@ WHERE PName LIKE "%gizmo%"
   - Y may contain special symbols
     - **%** - Any sequence of characters
 
-#### Distinct
+### Distinct
 
 ```SQL
 SELECT DISTINCT Category
@@ -215,7 +215,7 @@ FROM Product
 
 - Eliminate duplicates in the output
 
-#### Order By
+### Order By
 
 ```SQL
 SELECT PName, Price, Manufacturer
@@ -230,9 +230,9 @@ ORDER BY Price, PName
 
 ---
 
-### SQL Database Functionality
+## SQL Database Functionality
 
-#### Selecting Data
+### Selecting Data
 
 ```SQL
 SELECT list_of_fields
@@ -245,7 +245,7 @@ ORDER BY order_by_clause
 
 - The **SELECT** statement is used to retrieve data from one or more databases
 
-#### Updating Data
+### Updating Data
 
 ```SQL
 UPDATE Customers
@@ -255,7 +255,7 @@ WHERE CustomerId = 'ALFKI'
 
 - The **UPDATE** statement is used to update information in database tables
 
-#### Inserting Data
+### Inserting Data
 
 ```SQL
 INSERT INTO [OrderDetails]
@@ -265,7 +265,7 @@ VALUES (10248, 2, 19.00, 2, 0)
 
 - The **INSERT** statement is used to add one or more rows to a database table
 
-#### Deleting Data
+### Deleting Data
 
 ```SQL
 DELETE FROM Customers
@@ -276,12 +276,12 @@ WHERE CustomerId = 'ALFKI'
 
 ---
 
-### The MySQL Server
+## The MySQL Server
 
 - A **MySQL** server can be given SQL commands, executes them, and results the results to the connected application
 - Check student email for ucc database credentials
 
-#### Command Line Interface
+### Command Line Interface
 
 - Used to start the **MySQL** client
 - Commands for looking around in the database
@@ -291,7 +291,7 @@ WHERE CustomerId = 'ALFKI'
 
 ---
 
-### Tables
+## Tables
 
 - A typical database definition has:
 
@@ -302,7 +302,7 @@ WHERE CustomerId = 'ALFKI'
     - Foreign Keys
     - Indeices to facilitate fast look ups
 
-#### Primary Key
+### Primary Key
 
 - The **primary key** is a field in a table which uniquely identifies each row/record in a database table
 - **Primary keys** must contain **unique** values
@@ -333,7 +333,7 @@ ALTER TABLE Customers
 ADD PRIMARY KEY (ID, NAME);
 ```
 
-#### Delete Primary Key
+### Delete Primary Key
 
 ```SQL
 ALTER TABLE Customers
@@ -344,19 +344,19 @@ DROP PRIMARY KEY;
 
 ---
 
-### Example: Quiz
+## Example: Quiz
 
 <br>
 
-#### Quiz Database Structure
+### Quiz Database Structure
 
-##### Quiz Table
+#### Quiz Table
 
 | id  | description |  creation_date   |
 | :-: | :---------: | :--------------: |
 |  1  | Trivia Quiz | 10/07/2018 10:22 |
 
-##### Question Table
+#### Question Table
 
 | id  |               text               | quiz_id |
 | :-: | :------------------------------: | :-----: |
@@ -364,7 +364,7 @@ DROP PRIMARY KEY;
 |  2  | Who is the president of America  |    1    |
 | ... |               ...                |   ...   |
 
-##### Answer Table
+#### Answer Table
 
 | id  |       text        | point_value | question_id |
 | :-: | :---------------: | :---------: | :---------: |
@@ -374,7 +374,7 @@ DROP PRIMARY KEY;
 
 <br>
 
-#### Quiz Database Schema
+### Quiz Database Schema
 
 ```SQL
 CREATE TABLE quiz (
@@ -410,7 +410,7 @@ question(id) ON DELETE CASCADE
 
 ---
 
-### Further SQL Details
+## Further SQL Details
 
 - Data Types
   - Numbers: **INT**, **LONGINT**, **NUMBERIC**, **FLOAT**, **DOUBLE**
@@ -422,7 +422,7 @@ question(id) ON DELETE CASCADE
 - **CASCADE**
   - Keeping the data clean and robust
 
-#### Null Values
+### Null Values
 
 - It is possible for tuples to have **null** values, denoted by **null**, for some of their attributes
 - **Null** signifies an unknown value or that a value does not exist
@@ -445,7 +445,7 @@ question(id) ON DELETE CASCADE
 - Result of where clause predicate is treated as false if it evaluates to unknown
   <br>
 
-#### Aggregate Functions
+### Aggregate Functions
 
 - These functions operate on the multiset of values of a column of a relation, and return a value
   - **avg** - average value
@@ -454,7 +454,7 @@ question(id) ON DELETE CASCADE
   - **sum** - sum of values
   - **count** - number of values
 
-##### Example: Aggregate Function
+#### Example: Aggregate Function
 
 - Find the average salary of instructors in the Computer Science department
 
@@ -474,7 +474,7 @@ SELECT COUNT (distinct ID) FROM teaches WHERE semester = 'Spring' and year = 201
 SELECT COUNT (*) FROM course;
 ```
 
-##### Aggregate Functions - Group By
+#### Aggregate Functions - Group By
 
 - Find the average salaray of instructors in each department
 
@@ -485,7 +485,7 @@ GROUP BY dept_name;
 
 ---
 
-#### Aggregate Functions (Cont.)
+### Aggregate Functions (Cont.)
 
 Attributes in select clause outside of aggregate functions must appear in group by list
 
@@ -507,7 +507,7 @@ GROUP BY dept_name, ID;
 
 <br>
 
-##### Aggregate Functions - Having Clause
+#### Aggregate Functions - Having Clause
 
 Find the names and average salaries of all departments whose average salary is greater than 42000
 
@@ -521,7 +521,7 @@ HAVING AVG (salary) > 42000;
 - **Note**: predicates in the having clause are applied after the formation of groups whereas predicates in the where clause are applied before forming groups
   <br>
 
-##### Null Values and Aggregates
+#### Null Values and Aggregates
 
 ```SQL
 SELECT SUM (salary ) FROM instructor
@@ -535,7 +535,7 @@ SELECT SUM (salary ) FROM instructor
   - **count** returns 0
   - all other aggregates return **null**
 
-##### IN Operator
+#### IN Operator
 
 - Shorthand for multiple **OR** conditions
 
@@ -553,7 +553,7 @@ WHERE Country NOT IN ('Germany', 'France', 'UK’);
 
 - Selects all customers that are NOT located in "Germany", "France" or "UK"
 
-##### Exists Operator
+#### Exists Operator
 
 ```SQL
 SELECT column_name(s) FROM table_name
@@ -586,7 +586,7 @@ customers.customer_id = orders.customer_id);
 
 - **NOT** condition can be combined with the **EXISTS** condition to create a **NOT EXISTS** condition. Let's look at an example that shows how to use the **NOT EXISTS** condition in **SQL**
 
-##### Nested Subqueries
+#### Nested Subqueries
 
 - **SQL** provides a mechanism for the nesting of subqueries. A subquery is a selectfrom-where expression that is nested within another query
 
@@ -609,7 +609,7 @@ Country IN (SELECT Country FROM Suppliers);
 
 ---
 
-#### Modification of the Database
+### Modification of the Database
 
 - Deletion of tuples from a given relation/table
 - Insertion of new tuples into a given relation/table
@@ -617,7 +617,7 @@ Country IN (SELECT Country FROM Suppliers);
 
 <br>
 
-##### Deletion
+#### Deletion
 
 ```SQL
 DELETE FROM instructor
@@ -643,7 +643,7 @@ FROM instructor);
   - **Solution in SQL** 1. First, compute **avg** (salary) and find all tuples to delete 2. Delete all tuples found above (without recomputing **avg** or retesting the tuples)
     <br>
 
-##### Insertion
+#### Insertion
 
 ```SQL
 INSERT INTO course
@@ -688,7 +688,7 @@ INSERT INTO table1 SELECT * FROM table1
 
 <br>
 
-##### Updates
+#### Updates
 
 ```SQL
 UPDATE instructor
@@ -716,7 +716,7 @@ from instructor);
 
 <br>
 
-##### Destroying or Altering Relations
+#### Destroying or Altering Relations
 
 ```SQL
 DROP TABLE Students
