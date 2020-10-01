@@ -116,8 +116,6 @@
 
 ### SQL Examples
 
-<br>
-
 #### Example: Selection Query
 
 ##### Base Table
