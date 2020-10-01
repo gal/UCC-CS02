@@ -63,9 +63,9 @@
 
 ### SQL Examples
 
-#### Example: Selection Query
-
 <br>
+
+#### Example: Selection Query
 
 ##### Base Table
 
