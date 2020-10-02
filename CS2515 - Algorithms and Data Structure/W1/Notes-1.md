@@ -1,5 +1,3 @@
-# CS2515 Week 1 - Module Intro
-
 - [CS2515 Week 1 - Module Intro](#cs2515-week-1---module-intro)
   - [Abstract Data Types](#abstract-data-types)
   - [What is the point](#what-is-the-point)
@@ -9,12 +7,16 @@
   - [What we will use](#what-we-will-use)
     - [Python 3](#python-3)
   - [Module Requirements](#module-requirements)
+- [CS2515 Week 1 - Algorithms and Runtime Efficiency](#cs2515-week-1---algorithms-and-runtime-efficiency)
+  - [Excercise: Checking for String Anagrams](#excercise-checking-for-string-anagrams)
 
 ---
 
+# CS2515 Week 1 - Module Intro
+
 ## Abstract Data Types
 
-**Doesnt necessarily specify how they should be used**
+**Doesn't necessarily specify how they should be used**
 
 - Does it work as it should
 - How long does it take
@@ -32,9 +34,9 @@
 
 2. Programs should be efficient
    - Programs that take too long to run are useless
-   - Understand the implication of choosing certain library functions in regard to runtime and memory use
-   - Implications of different desing pattern choices
-     - What might be easier for you to code may be worse for the programs runtime overall
+   - Understand the implication of choosing certain **Library Functions** in regard to **Runtime** and **Memory** use
+   - Implications of different **Design Pattern** choices
+     - What might be easier for you to code may be worse for the programs **Runtime** overall
 
 ### Efficiency
 
@@ -47,12 +49,12 @@
 
 1. You must advertise and explain code to other programmers _in ways they will understand_
 
-   - State the Abstract Data Types used
+   - State the **Abstract Data Types** used
      - Experienced Programmers will know how to interact with them
-   - State the data structures and algorithms you've implemented
+   - State the **Data Structures** and **Algorithms** you've implemented
 
-2. You should not break standard design patterns and principles
-   - Understand the specificed ways you're meant to interact with the data
+2. You should not break standard **Design Patterns** and **Principles**
+   - Understand the specificed ways you're meant to interact with the **Data**
    - Don't interact with it in any others ways
 
 ---
@@ -61,8 +63,8 @@
 
 ### Python 3
 
-- Understanding library functions
-- Learn how to implement code and data structures properly
+- Understanding **Library Functions**
+- Learn how to implement **Code** and **Data Structures** properly
 - Practice coding skills regularly
 
 ---
@@ -78,3 +80,58 @@
   - [Problem Solving with Algorithms and Data Structures, Miller and Ranum](http://87.120.36.5/main/2061000/ae007a68c3c7fe1e5abecbad87d16703/Miller%20B.N.%2C%20Ranum%20D.L.%20-%20Problem%20Solving%20with%20Algorithms%20and%20Data%20Structures%20Using%20Python.%20Release%203.0.pdf)
 
   - [Data Structures and Algorithms with Python, Lee and Hubbard, Springer](http://87.120.36.5/main/1310000/0b6a4d4811cce0d8ca288cada2c21872/%28Undergraduate%20Topics%20in%20Computer%20Science%29%20Kent%20D.%20Lee%2C%20Steve%20Hubbard%20-%20Data%20Structures%20and%20Algorithms%20with%20Python-Springer%20%282015%29.pdf)
+
+---
+
+<br>
+
+<br>
+
+# CS2515 Week 1 - Algorithms and Runtime Efficiency
+
+## Excercise: Checking for String Anagrams
+
+- What **Algorithms** could we use?
+
+**Replace - O(n&#x00B2;)**
+
+```
+for each element (x) of str1
+  found = False
+  i=0
+  while (not found) and (i < len(str))
+    if x == str2[i]
+      found = True
+      str2[i] = Null
+    else
+      i += 1
+  if (not found)
+    return False
+return True
+```
+
+**Sort - O(n log n)**
+
+```
+sort(str1)
+sort(str2)
+for each i from 0 to len(str1)-1
+  if str1[i] != str2[i]
+    return False
+return True
+```
+
+**Count - O(2|x|+2n)**
+
+```
+arr = [alphabet]
+//Create an array (arr) with one cell for each character in the alphabet
+
+for each x in str1
+  arr[x] += 1
+for each x in str2
+  arr[x] -= 1
+for each element of arr
+  if element != 0
+    return false
+```

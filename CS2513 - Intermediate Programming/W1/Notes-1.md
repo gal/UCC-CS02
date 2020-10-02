@@ -1,7 +1,6 @@
-# CS2513 Week 1 - Intro to OOP and ADT
-
-- [CS2513 Week 1 - Intro to OOP and ADT](#cs2513-week-1---intro-to-oop-and-adt)
+- [CS2513 Week 1 - Module Intro](#cs2513-week-1---module-intro)
   - [Module Contents](#module-contents)
+- [CS2513 Week 1 - Intro to OOP and ADT](#cs2513-week-1---intro-to-oop-and-adt)
   - [Object Oriented Programming](#object-oriented-programming)
     - [Advantages of OOP](#advantages-of-oop)
     - [Disadvantages of OOP](#disadvantages-of-oop)
@@ -17,16 +16,20 @@
 
 ---
 
+# CS2513 Week 1 - Module Intro
+
 ## Module Contents
 
-- Object Oriented Programming (OOP)
-- How do we leverage (reuse, extend, interact) with others code
-- How do we package code so others can use it
-- How do we produce code so that it is easily maintained
-- How to create libraries of code for yourself and others while ensuring it works correctly and robustly
-- How do we organise large projects and allowe several teammates to work together
+- **Object Oriented Programming** (OOP)
+- How do we leverage (**reuse**, **extend**, **interact**) with others code
+- How do we **package code** so others can use it
+- How do we **produce code** so that it is **easily maintained**
+- How to create **libraries** of code for yourself and others while ensuring it works **correctly** and **robustly**
+- How do we organise **large projects** and allow **several teammates** to work together
 
 ---
+
+# CS2513 Week 1 - Intro to OOP and ADT
 
 ## Object Oriented Programming
 

@@ -1,5 +1,12 @@
-# CS2208 Week 1 - Relational Databases and SQL Recap
-
+- [CS2208 Week 1 - Module Intro & Recap](#cs2208-week-1---module-intro--recap)
+  - [Module Content](#module-content)
+  - [Databases (General)](#databases-general)
+    - [Example: Online Bookseller](#example-online-bookseller)
+      - [Using Databases](#using-databases)
+    - [Database Management System](#database-management-system)
+      - [What Functions should a DBMS provide](#what-functions-should-a-dbms-provide)
+      - [DBMS Benefits](#dbms-benefits)
+      - [Key Data Management Concepts](#key-data-management-concepts)
 - [CS2208 Week 1 - Relational Databases and SQL Recap](#cs2208-week-1---relational-databases-and-sql-recap)
   - [Relational Databases](#relational-databases)
   - [Table Implementation](#table-implementation)
@@ -56,9 +63,118 @@
 
 ---
 
+# CS2208 Week 1 - Module Intro & Recap
+
 **Semester 1**: _Relational Databases_ using **SQL**<br>**Semester 2**: _Non-Relational Databases_ using **No-SQL**
 
+## Module Content
+
+- **Basic SQL**
+
+  - Create **Tables**, basic **Joins**, **Primary Keys**, etc
+
+- **Database Modelling**
+
+  - Using **Entity Relationship Diagrams**, **Normal Forms**, **Relational Algebra/Calculus**
+
+- **Advanced SQL**
+  - Utilising **Indexing**, **Triggers**, etc
+
 ---
+
+## Databases (General)
+
+- What is a **Database**
+
+  - A collection of files storing **Related Data**
+
+- Example of **Databases**
+  - Accounts Database
+  - Payroll Database
+  - UCC's Student Information Database
+  - Amazon's Product Database
+  - Airline Reservation Database
+
+### Example: Online Bookseller
+
+- What **Data Information** do we need
+
+  - Data about Books, Customers, Pending Orders, Order History, Trends, Metrics, etc
+  - Data about Web Sessions (Clicks, Page Views, Search History)
+
+- What **Data Capabilities** do we need
+  - Insert/Remove books, Find books by author/title/etc, Analyse past order history, Recommend books, etc
+  - Data must be accessed **Efficiently** by many users
+  - Data must be safe from **Failures** and **Malicious Users**
+  - Data must be **Persistent**
+    - Data will be very large
+    - Data wont all fit in **Memory**
+
+#### Using Databases
+
+- Jane and John both have a shared **ID** number for a \$200 giftcard they got as a wedding gift
+
+  - Jane while at her office orders a book - _"The Selfish Gene", \$80_
+  - John while at his office orders a book - _"Guns of Steel", \$100_
+
+- Reasons for **DBMS**
+  - What is the ending credit left on the card?
+  - What if the second book cost \$130?
+  - What if the system crashes?
+
+### Database Management System
+
+- What is a **DBMS**
+
+  - A big program written by someone else that allows us to **Efficiently** manage **Large Databases**
+    and allows the database to persist over long periods of time
+
+- Examples of **DBMS**
+  - **Industry** - Oracle, IBM DB2, Microsoft SQL Server, etc
+  - **Open Source** - MySQL, PostgreSQL, CouchDB
+  - **Open Source Library** - SQLite
+
+#### What Functions should a DBMS provide
+
+- Describe real-world entities in terms of **Stored Data**
+- **Persistently** store large **Datasets**
+- Efficiently **Query** & **Update**
+  - Must handle **Complex Questions** about the **Data**
+  - Must handle **Sophisticated Updates**
+  - **Performance** matters
+- Change the **Data Structure** (add **Attributes**, etc)
+- **Concurrency Control**
+  - Enable **Simultaneous Updates**
+- Crash **Recovery**
+- **Security** and **Integrity**
+
+#### DBMS Benefits
+
+- It is **Expensive** to implement all these features inside an application without using a **DBMS**
+- **DBMS** provides these features (and more)
+- **DBMS** simplifies **Application Development**
+
+#### Key Data Management Concepts
+
+- **Data Models**
+  - How to describe real-world **Data** using proper **Data Models**
+    - e.g. **Relational**, **NoSQL**, etc
+- **Declarative Query Languages**
+  - Say _What_ you want **not** _How_ to get it
+- **Data Independence**
+  - **Physical** Independence
+    - Able to change how **Data** is stored on **Disk** without needing to make changes to the applications
+  - **Logical** Independence
+    - Able to change **Database Schema** without affecting the applications
+- **Query Optimizer**
+  - Query plans and Understanding how they are executed
+- **Physical Design**
+- **Transactions**
+  - **Isolation** and **Atomicity**
+
+---
+
+# CS2208 Week 1 - Relational Databases and SQL Recap
 
 ## Relational Databases
 
@@ -83,34 +199,37 @@
 
   - 2D Array
 
-  ### Row Major Order
+### Row Major Order
 
-  ```SQL
-  table=[
-      ["IBM", "USA", 20000, "True"],
-      ["Sony", "Japan", 5000, "True"],
-      ["Nintendo", "Japan", 3000, "True"],
-      ["AirCanada", "Canada", 5000, "True"]
-      ]
-  ```
+```SQL
+table=[
+    ["IBM", "USA", 20000, "True"],
+    ["Sony", "Japan", 5000, "True"],
+    ["Nintendo", "Japan", 3000, "True"],
+    ["AirCanada", "Canada", 5000, "True"]
+    ]
+```
 
-  - What operations could we do efficiently using a row major order?
+- What **Operations** could we do **Efficiently** using a **Row Major Order**?
 
-  ### Column Major Order
+### Column Major Order
 
-  ```SQL
-  table=[
-      ["IBM", "Sonny", "Nintendo", "AirCanada"],
-      ["USA", "Japan", "Japan", "Canada"],
-      [20000, 5000, 3000, 5000],
-      ["True", "True", "True", "True"]
-      ]
-  ```
+```SQL
+table=[
+    ["IBM", "Sonny", "Nintendo", "AirCanada"],
+    ["USA", "Japan", "Japan", "Canada"],
+    [20000, 5000, 3000, 5000],
+    ["True", "True", "True", "True"]
+    ]
+```
 
-  - What operations could we do efficiently using a column major order?
+- What **Operations** could we do **Efficiently** using a **Column Major Order**?
 
-- What happens when you alter a table?
-- **Physical Data Independence** - the logical definition of the data remains unchanged, even when we make changes to the actual implementation
+<br>
+
+- What happens when you alter a **Table**?
+- **Physical Data Independence**
+  - Logical definition of the **Data** remains unchanged, even when we make changes to the actual **Implementation**
 
 ---
 
