@@ -1,6 +1,6 @@
-# CS2513 Week 1 - Lecture 2
+# CS2513 Week 1 - Intro to OOP and ADT
 
-- [CS2513 Week 1 - Lecture 2](#cs2513-week-1---lecture-2)
+- [CS2513 Week 1 - Intro to OOP and ADT](#cs2513-week-1---intro-to-oop-and-adt)
   - [Module Contents](#module-contents)
   - [Object Oriented Programming](#object-oriented-programming)
     - [Advantages of OOP](#advantages-of-oop)

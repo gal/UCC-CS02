@@ -1,6 +1,6 @@
-# CS2515 Week 1 - Intro
+# CS2515 Week 1 - Module Intro
 
-- [CS2515 Week 1 - Intro](#cs2515-week-1---intro)
+- [CS2515 Week 1 - Module Intro](#cs2515-week-1---module-intro)
   - [Abstract Data Types](#abstract-data-types)
   - [What is the point](#what-is-the-point)
     - [Proper Implementation](#proper-implementation)
