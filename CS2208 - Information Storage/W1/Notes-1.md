@@ -261,8 +261,6 @@ WHERE Category = "Gadgets"
 |   Gizmo    | \$19.99 | Gadgets  |  GizmoWorks  |
 | Powergizmo | \$29.99 | Gadgets  |  GizmoWorks  |
 
-<br>
-
 ### Example: Projection Query
 
 #### Base Table
@@ -465,8 +463,6 @@ DROP PRIMARY KEY;
 
 ## Example: Quiz
 
-<br>
-
 ### Quiz Database Structure
 
 #### Quiz Table
@@ -490,8 +486,6 @@ DROP PRIMARY KEY;
 |  1  | Michael D Higgins |      1      |      1      |
 |  2  |   Donald Trump    |     10      |      1      |
 | ... |        ...        |     ...     |     ...     |
-
-<br>
 
 ### Quiz Database Schema
 
@@ -624,8 +618,6 @@ FROM instructor
 GROUP BY dept_name, ID;
 ```
 
-<br>
-
 #### Aggregate Functions - Having Clause
 
 Find the names and average salaries of all departments whose average salary is greater than 42000
@@ -734,8 +726,6 @@ Country IN (SELECT Country FROM Suppliers);
 - Insertion of new tuples into a given relation/table
 - Updating of values in some tuples in a given relation/table
 
-<br>
-
 #### Deletion
 
 ```SQL
@@ -760,8 +750,6 @@ FROM instructor);
 - Delete all instructors whose salary is less than the average salary of instructors
   - **Problem** - as we delete tuples from deposit, the average salary changes
   - **Solution in SQL** 1. First, compute **avg** (salary) and find all tuples to delete 2. Delete all tuples found above (without recomputing **avg** or retesting the tuples)
-
-<br>
 
 #### Insertion
 
@@ -806,8 +794,6 @@ INSERT INTO table1 SELECT * FROM table1
 
 - Otherwise queries like this would cause problems
 
-<br>
-
 #### Updates
 
 ```SQL
@@ -833,8 +819,6 @@ from instructor);
 ```
 
 - Give a 5% salary raise to instructors whose salary is less than average
-
-<br>
 
 #### Destroying or Altering Relations
 
