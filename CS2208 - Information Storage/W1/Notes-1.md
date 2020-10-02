@@ -1,6 +1,6 @@
-# CS2208 Week 1 - Synchronous
+# CS2208 Week 1 - Relational Databases and SQL Recap
 
-- [CS2208 Week 1 - Synchronous](#cs2208-week-1---synchronous)
+- [CS2208 Week 1 - Relational Databases and SQL Recap](#cs2208-week-1---relational-databases-and-sql-recap)
   - [Relational Databases](#relational-databases)
   - [Table Implementation](#table-implementation)
     - [Row Major Order](#row-major-order)
@@ -74,12 +74,12 @@
 ## Table Implementation
 
 - How would you implement this?
-  |   cname   | country | no_employees | for_profit |
+  | cname | country | no_employees | for_profit |
   | :-------: | :-----: | :----------: | :--------: |
-  |    IBM    |   USA   |    20000     |    True    |
-  |   Sony    |  Japan  |     5000     |    True    |
-  | Nintendo  |  Japan  |     3000     |    True    |
-  | AirCanada | Canada  |     5000     |    True    |
+  | IBM | USA | 20000 | True |
+  | Sony | Japan | 5000 | True |
+  | Nintendo | Japan | 3000 | True |
+  | AirCanada | Canada | 5000 | True |
 
   - 2D Array
 
@@ -352,25 +352,25 @@ DROP PRIMARY KEY;
 
 #### Quiz Table
 
-|  id   | description |  creation_date   |
-| :---: | :---------: | :--------------: |
-|   1   | Trivia Quiz | 10/07/2018 10:22 |
+| id  | description |  creation_date   |
+| :-: | :---------: | :--------------: |
+|  1  | Trivia Quiz | 10/07/2018 10:22 |
 
 #### Question Table
 
-|  id   |               text               | quiz_id |
-| :---: | :------------------------------: | :-----: |
-|   1   | Who is the president of Ireland? |    1    |
-|   2   | Who is the president of America  |    1    |
-|  ...  |               ...                |   ...   |
+| id  |               text               | quiz_id |
+| :-: | :------------------------------: | :-----: |
+|  1  | Who is the president of Ireland? |    1    |
+|  2  | Who is the president of America  |    1    |
+| ... |               ...                |   ...   |
 
 #### Answer Table
 
-|  id   |       text        | point_value | question_id |
-| :---: | :---------------: | :---------: | :---------: |
-|   1   | Michael D Higgins |      1      |      1      |
-|   2   |   Donald Trump    |     10      |      1      |
-|  ...  |        ...        |     ...     |     ...     |
+| id  |       text        | point_value | question_id |
+| :-: | :---------------: | :---------: | :---------: |
+|  1  | Michael D Higgins |      1      |      1      |
+|  2  |   Donald Trump    |     10      |      1      |
+| ... |        ...        |     ...     |     ...     |
 
 <br>
 
