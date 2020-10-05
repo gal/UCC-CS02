@@ -1,6 +1,6 @@
 # UCC-CS02
 
-Storing files, notes and lecture slides from the second year of CK401
+Storing files, notes and lecture slides from the second year of CK401<br>[First Year Lecture Archive](https://github.com/ReeceDonovan/UCC-CS01)
 
 ## Semester 1 Timetable
 
