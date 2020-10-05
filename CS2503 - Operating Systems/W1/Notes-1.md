@@ -1,6 +1,6 @@
 - [CS2503 Week 1 - Module Intro](#cs2503-week-1---module-intro)
   - [Module Content](#module-content)
-- [CS2503 Week 1 - Intro to Linux (Unix)](#cs2503-week-1---intro-to-linux-unix)
+- [CS2503 Week 1 - What is Linux (Unix)](#cs2503-week-1---what-is-linux-unix)
   - [Linux](#linux)
     - [Why Study This](#why-study-this)
   - [Unix Philosophy](#unix-philosophy)
@@ -57,7 +57,7 @@
 
 ---
 
-# CS2503 Week 1 - Intro to Linux (Unix)
+# CS2503 Week 1 - What is Linux (Unix)
 
 ## Linux
 
