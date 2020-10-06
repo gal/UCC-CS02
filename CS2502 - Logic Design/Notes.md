@@ -1,4 +1,10 @@
-# CS2507 Week 1 - Module Intro
+<details>
+<summary>Table of Content</summary>
+<!-- TOC -->
+</details>
+---
+
+# CS2507 Week 1
 
 - Logic Design is primarily about **digital circuits**, such as computer hardware
 - Logic Design can also be applied to more general digital systems, such as **computer software**

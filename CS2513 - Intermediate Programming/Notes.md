@@ -1,6 +1,9 @@
-- [CS2513 Week 1 - Module Intro](#cs2513-week-1---module-intro)
+<details>
+<summary>Table of Content</summary>
+<!-- TOC -->
+
+- [CS2513 Week 1](#cs2513-week-1)
   - [Module Contents](#module-contents)
-- [CS2513 Week 1 - Intro to OOP and ADT](#cs2513-week-1---intro-to-oop-and-adt)
   - [Object Oriented Programming](#object-oriented-programming)
     - [Advantages of OOP](#advantages-of-oop)
     - [Disadvantages of OOP](#disadvantages-of-oop)
@@ -13,10 +16,16 @@
       - [Advantages of an ADT](#advantages-of-an-adt)
   - [The Formal Concepts in OOP](#the-formal-concepts-in-oop)
   - [Python vs Purely Object Oriented Languages](#python-vs-purely-object-oriented-languages)
+- [CS2513 Week 2](#cs2513-week-2)
+  - [Encapsulation](#encapsulation)
+  - [What is a Class](#what-is-a-class)
+  - [What is an Object](#what-is-an-object)
+
+</details>
 
 ---
 
-# CS2513 Week 1 - Module Intro
+# CS2513 Week 1
 
 ## Module Contents
 
@@ -28,8 +37,6 @@
 - How do we organise **large projects** and allow **several teammates** to work together
 
 ---
-
-# CS2513 Week 1 - Intro to OOP and ADT
 
 ## Object Oriented Programming
 
@@ -230,3 +237,33 @@
   - Developers implement **Encapsulation** based on trust
 - **Python** provides more **Object Oriented** features than **Java** in some ways
   - Allows the use of **Multiple Inheritance** and other features
+
+---
+
+# CS2513 Week 2
+
+## Encapsulation
+
+- First and most basic principle of OOP
+- Describes real world entities (**Classes**) in terms of behaviours (**Methods** - actions) and states (**Attributes** - details)
+- Change state through the use of **behaviours**
+  - Makes code more **robust** by controlling how and when an attribute is changed
+  - Means we can **parallelise** work easily
+  - Allows the code to be loosely bound
+
+## What is a Class
+
+- A class is a special **Datatype** which defines how to **build** a certain kind of **object**
+- The class also stores some **data items** that are shared by all the **instances** of this class
+- Instances are objects that are created which follow the **definition** given inside of the class
+- Python **doesn't** use separate class interface definitions as in some languages
+  - You just define the class then use it
+
+## What is an Object
+
+- Objects are the basic run-time entities in an object-oriented system
+- They may represent a person, a place, a bank account, a table of data or any item that the program must handle
+- When a program is executed the objects interact by sending messages to one another
+- Objects have two components
+  - Data (i.e Attributes)
+  - Behaviours (i.e Methods)

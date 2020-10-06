@@ -1,4 +1,8 @@
-- [CS2515 Week 1 - Module Intro](#cs2515-week-1---module-intro)
+<details>
+<summary>Table of Content</summary>
+<!-- TOC -->
+
+- [CS2515 Week 1](#cs2515-week-1)
   - [Abstract Data Types](#abstract-data-types)
   - [What is the point](#what-is-the-point)
     - [Proper Implementation](#proper-implementation)
@@ -7,12 +11,13 @@
   - [What we will use](#what-we-will-use)
     - [Python 3](#python-3)
   - [Module Requirements](#module-requirements)
-- [CS2515 Week 1 - Algorithms and Runtime Efficiency](#cs2515-week-1---algorithms-and-runtime-efficiency)
   - [Excercise: Checking for String Anagrams](#excercise-checking-for-string-anagrams)
+
+</details>
 
 ---
 
-# CS2515 Week 1 - Module Intro
+# CS2515 Week 1
 
 ## Abstract Data Types
 
@@ -86,8 +91,6 @@
 <br>
 
 <br>
-
-# CS2515 Week 1 - Algorithms and Runtime Efficiency
 
 ## Excercise: Checking for String Anagrams
 

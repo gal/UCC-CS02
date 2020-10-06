@@ -1,6 +1,8 @@
-- [CS2507 Week 1 - Module Intro](#cs2507-week-1---module-intro)
+<details>
+<summary>Table of Content</summary>
+
+- [CS2507 Week 1](#cs2507-week-1)
   - [Module Content](#module-content)
-- [CS2507 Week 1 - Basics of Computer Architecture](#cs2507-week-1---basics-of-computer-architecture)
   - [Introduction to Computer Architecture](#introduction-to-computer-architecture)
     - [What is a Computer](#what-is-a-computer)
       - [Computer Components](#computer-components)
@@ -14,9 +16,11 @@
       - [Key Performance Metrics](#key-performance-metrics)
       - [Key Performance Limits](#key-performance-limits)
 
+</details>
+
 ---
 
-# CS2507 Week 1 - Module Intro
+# CS2507 Week 1
 
 ## Module Content
 
@@ -29,8 +33,6 @@
 - **Assembly Programming**
 
 ---
-
-# CS2507 Week 1 - Basics of Computer Architecture
 
 ## Introduction to Computer Architecture
 
