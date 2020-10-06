@@ -1,4 +1,7 @@
-- [CS2208 Week 1 - Module Intro & Recap](#cs2208-week-1---module-intro--recap)
+<details>
+<summary>Table of Content</summary>
+
+- [CS2208 Week 1](#cs2208-week-1)
   - [Module Content](#module-content)
   - [Databases (General)](#databases-general)
     - [Example: Online Bookseller](#example-online-bookseller)
@@ -7,7 +10,6 @@
       - [What Functions should a DBMS provide](#what-functions-should-a-dbms-provide)
       - [DBMS Benefits](#dbms-benefits)
       - [Key Data Management Concepts](#key-data-management-concepts)
-- [CS2208 Week 1 - Relational Databases and SQL Recap](#cs2208-week-1---relational-databases-and-sql-recap)
   - [Relational Databases](#relational-databases)
   - [Table Implementation](#table-implementation)
     - [Row Major Order](#row-major-order)
@@ -60,10 +62,25 @@
       - [Insertion](#insertion)
       - [Updates](#updates)
       - [Destroying or Altering Relations](#destroying-or-altering-relations)
+- [CS2208 Week 2](#cs2208-week-2)
+  - [Relational Query Languages](#relational-query-languages)
+    - [Formal Relational Query Languages](#formal-relational-query-languages)
+    - [Preliminaries](#preliminaries)
+    - [Relational Algebra](#relational-algebra)
+      - [Projection](#projection)
+      - [Selection](#selection)
+      - [Union](#union)
+        - [Implementation](#implementation)
+      - [Intersection](#intersection)
+      - [Set-Difference (Minus)](#set-difference-minus)
+      - [Cross-Product (Times)](#cross-product-times)
+    - [Joins](#joins-1)
+
+</details>
 
 ---
 
-# CS2208 Week 1 - Module Intro & Recap
+# CS2208 Week 1
 
 **Semester 1**: _Relational Databases_ using **SQL**<br>**Semester 2**: _Non-Relational Databases_ using **No-SQL**
 
@@ -173,8 +190,6 @@
   - **Isolation** and **Atomicity**
 
 ---
-
-# CS2208 Week 1 - Relational Databases and SQL Recap
 
 ## Relational Databases
 
@@ -589,7 +604,7 @@ SELECT COUNT (*) FROM course;
 
 #### Aggregate Functions - Group By
 
-- Find the average salaray of instructors in each department
+- Find the average salary of instructors in each department
 
 ```SQL
 SELECT dept_name, AVG (salary) AS avg_salary FROM instructor
@@ -834,3 +849,135 @@ ALTER TABLE Students ADD COLUMN firstYear
 
 - Students will be altered by adding a new field
 - Every tuple in the current instance is extended with a null value in the new field
+
+---
+
+# CS2208 Week 2
+
+## Relational Query Languages
+
+- **Query Languages**
+  - Allow manipulation and retrieval of **data** from a **database**
+- **Relational** model supports **simple**, **powerful** QLs
+  - Strong **formal foundation** based on logic
+  - Allows for much **optimization**
+- Query Languages **!=** Programming Languages
+  - QLs not expected to be "Turing complete"
+  - QLs not intended to be used for complex calculations
+  - QLs support easy, efficient access to large data sets
+
+### Formal Relational Query Languages
+
+- Two mathematical Query Languages form the basis for “real” languages (e.g. SQL), and for implementation
+  - **Relational Algebra**
+    - More operational, very useful for representing execution plans
+  - **Relational Calculus**
+    - Lets users describe what they want, rather than how to compute it
+      - Non-operational, declarative
+
+### Preliminaries
+
+- A query is applied to relation instances, and the result of a query is also a relation instance
+  - Schemas of input relations for a query are fixed(but query will run regardless of instance)
+  - The schema for the result of a given query is also fixed, Determined by definition of query language constructs
+- Positional vs. Named-field Notation
+  - Positional notation easier for formal definitions, named-field notation more readable
+  - Both used in Relational Algebra and SQL
+
+### Relational Algebra
+
+- Basic operations
+  - Selection - Selects a subset of rows from relation
+  - Projection - Deletes unwanted columns from relation
+  - Cross-product - Allows us to combine two relations
+  - Set-difference - Tuples in rel.1, but not in rel.2
+  - Union - Tuples in rel.1 and in rel.2
+  - Renaming (for named perspective)
+- Additional operations
+  - Not essential, but very useful
+    - Intersection
+    - Join
+    - Division
+    - Renaming
+- Since each operation returns a relation, operations can be composed
+
+#### Projection
+
+- Deletes attributes that are not in **projection list**
+- **Schema** of result contains exactly the fields in the **projection list**, with the same names that they had in the (only) input relation
+- Projection operator has to eliminate **duplicates**
+  - **Note**: Real systems typically don’t do duplicate elimination unless the user explicitly asks for it
+
+#### Selection
+
+- Selects rows that satisfy **selection condition**
+- **No duplicates** in result
+- **Schema** of result identical to schema of (only) input relation
+- **_Result_** relation can be the input for another **relational algebra operation** (Operator composition)
+
+#### Union
+
+- Produces a resulting relation that contains a tuple for every tuple in either or both of two input relations (duplicates only occur once)
+- All of these operations take two input relations, which must be **compatible** (type-compatible)
+  - Same number of fields
+  - "Corresponding" fields have the same type
+
+##### Implementation
+
+- i=0
+- j=0
+- if T1[i] < T2[j]
+  - print T1[i]
+  - i+=1
+- elif T1[i] > T2[j]
+  - print T2[j]
+  - j+=1
+- elif both are the same
+  - print any of them
+  - increment both I and j
+- print the remaining elements of the larger array
+
+#### Intersection
+
+- Produces a resulting relation that contains a tuple for every tuple in **BOTH** of the two input relations
+- The relations being combined must be **compatible** (type-compatible)
+
+#### Set-Difference (Minus)
+
+- Produces a resulting relation that contains a tuple for every tuple in the first of two input relations and not in the second
+- The Relations being combined must be **compatible** (type-compatible)
+
+#### Cross-Product (Times)
+
+**S1**
+| sid | sname | rating | age |
+|:---:|:-----:|:------:|:----:|
+| 22 | dusty | 7 | 45.0 |
+| 31 | lubby | 8 | 55.5 |
+| 58 | rusty | 10 | 35.0 |
+
+**S2**
+| sid | sname | rating | age |
+|:---:|:-----:|:------:|:----:|
+| 28 | yuppy | 9 | 35.0 |
+| 31 | lubby | 8 | 55.5 |
+| 44 | guppy | 5 | 35.0 |
+| 58 | rusty | 10 | 35.0 |
+
+- Each row of S1 is paired with each row of R1
+- Result schema has one field per field of S1 and R1, with field names "inherited" if possible
+  - **Conflict**: Both S1 and R1 have a field called sid
+
+### Joins
+
+- **Conditional Join**:
+
+  - ![](https://i.gyazo.com/75cf6635c470475c49c1cfb41d391b39.png)
+  - **Result schema** same as that of cross-product
+  - Fewer tuples than cross-product, might be able to compute more efficiently
+  - Sometimes called a **theta-join**
+
+- **Equi-Join**:
+  - A special case of condition join where the condition _c_ contains only equalities and ^
+  - **Result schema** similar tocross-product, but only one copy of fields for which equality is specified
+  - **Natural Join**: Equijoin on _all_ common fields
