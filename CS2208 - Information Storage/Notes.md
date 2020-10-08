@@ -75,6 +75,9 @@
       - [Set-Difference (Minus)](#set-difference-minus)
       - [Cross-Product (Times)](#cross-product-times)
     - [Joins](#joins-1)
+      - [Nested Loop Joins](#nested-loop-joins)
+      - [Natural Join](#natural-join)
+    - [Relational Querys](#relational-querys)
 
 </details>
 
@@ -887,11 +890,11 @@ ALTER TABLE Students ADD COLUMN firstYear
 ### Relational Algebra
 
 - Basic operations
-  - Selection - Selects a subset of rows from relation
-  - Projection - Deletes unwanted columns from relation
-  - Cross-product - Allows us to combine two relations
-  - Set-difference - Tuples in rel.1, but not in rel.2
-  - Union - Tuples in rel.1 and in rel.2
+  - Selection ($\sigma$) - Selects a subset of rows from relation
+  - Projection ($\pi$) - Deletes unwanted columns from relation
+  - Cross-product ($X$) - Allows us to combine two relations
+  - Set-difference ($-$) - Tuples in rel.1, but not in rel.2
+  - Union ($\smile$) - Tuples in rel.1 and in rel.2
   - Renaming (for named perspective)
 - Additional operations
   - Not essential, but very useful
@@ -907,6 +910,7 @@ ALTER TABLE Students ADD COLUMN firstYear
 - **Schema** of result contains exactly the fields in the **projection list**, with the same names that they had in the (only) input relation
 - Projection operator has to eliminate **duplicates**
   - **Note**: Real systems typically don’t do duplicate elimination unless the user explicitly asks for it
+- $\pi$<sub> sname, rating</sub>S2
 
 #### Selection
 
@@ -914,6 +918,7 @@ ALTER TABLE Students ADD COLUMN firstYear
 - **No duplicates** in result
 - **Schema** of result identical to schema of (only) input relation
 - **_Result_** relation can be the input for another **relational algebra operation** (Operator composition)
+- $\pi$<sub>sname, rating</sub>($\sigma$<sub>rating>8</sub>(S2))
 
 #### Union
 
@@ -921,6 +926,7 @@ ALTER TABLE Students ADD COLUMN firstYear
 - All of these operations take two input relations, which must be **compatible** (type-compatible)
   - Same number of fields
   - "Corresponding" fields have the same type
+- S1$\smile$S2$\implies$sid, sname, rating, age
 
 ##### Implementation
 
@@ -941,6 +947,7 @@ ALTER TABLE Students ADD COLUMN firstYear
 
 - Produces a resulting relation that contains a tuple for every tuple in **BOTH** of the two input relations
 - The relations being combined must be **compatible** (type-compatible)
+- S1$-$S2$\implies$sid, sname, rating, age
 
 #### Set-Difference (Minus)
 
@@ -972,12 +979,37 @@ ALTER TABLE Students ADD COLUMN firstYear
 
 - **Conditional Join**:
 
-  - ![](https://i.gyazo.com/75cf6635c470475c49c1cfb41d391b39.png)
+  - R$\bowtie$<sub>$c$</sub>S = $\sigma$<sub>$c$</sub>(R$\times$S)
   - **Result schema** same as that of cross-product
   - Fewer tuples than cross-product, might be able to compute more efficiently
   - Sometimes called a **theta-join**
 
 - **Equi-Join**:
+
   - A special case of condition join where the condition _c_ contains only equalities and ^
-  - **Result schema** similar tocross-product, but only one copy of fields for which equality is specified
+  - **Result schema** similar to cross-product, but only one copy of fields for which equality is specified
   - **Natural Join**: Equijoin on _all_ common fields
+
+#### Nested Loop Joins
+
+- Tuple-based nested loop R$\bowtie$S
+- For each tuple r in R do
+  - For each tuple s in S do
+    - if r and s join then output (r,s)
+- Cost: T(R) \* T(S)
+
+#### Natural Join
+
+- R1$\bowtie$R2 = $\Pi$<sub>A, B, ...</sub>($\sigma$<sub>s</sub>(R1$\times$R2))
+- Where
+  - The selection s checks equality of all common attributes
+  - The projection eliminates the duplicate common attributes
+
+### Relational Querys
+
+- **DB Example**
+  <!-- - TODO: Check slide -->
+
+  {
+
+  }
