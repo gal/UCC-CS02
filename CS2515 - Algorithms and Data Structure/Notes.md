@@ -12,6 +12,18 @@
     - [Python 3](#python-3)
   - [Module Requirements](#module-requirements)
   - [Excercise: Checking for String Anagrams](#excercise-checking-for-string-anagrams)
+- [CS2515 Week 2](#cs2515-week-2)
+  - [Count distinct items in non-decreasing list](#count-distinct-items-in-non-decreasing-list)
+  - [Complexity Analysis](#complexity-analysis)
+  - [Big O (The Upper Bound)](#big-o-the-upper-bound)
+    - [The Standard Functions](#the-standard-functions)
+      - [Constant](#constant)
+      - [Logarithmic](#logarithmic)
+      - [Linear](#linear)
+      - [Log Linear](#log-linear)
+      - [Quadratic](#quadratic)
+      - [Cubic](#cubic)
+      - [Exponential](#exponential)
 
 </details>
 
@@ -143,11 +155,125 @@ for each element of arr
 
 # CS2515 Week 2
 
+## Count distinct items in non-decreasing list
+
+- First Attempt
+
+```Python
+def unique_check1(inputlist):
+  count = 0
+  for i in range(len(inputlist)):
+    unique = True
+    for j in inputlist[i+1:]:
+      if inputlist[i] == j:
+        unique = False
+    if unique:
+      count = count + 1
+  return count
+```
+
+- Second Attempt
+
+```Python
+def unique_check2(inputlist):
+  count = 1
+  for i in range(len(inputlist)-1):
+    if inputlist[i] != inputlist[i+1]:
+      count = count + 1
+  return count
+```
+
 ## Complexity Analysis
-<!-- TODO: Check slides -->
 
+- Difference in running time for small lists doesn't matter
 
-### Worse-case upper bound
+> listExamples.perf_check_random(50)
+> List length: 50
+> Count 1 time : 0.005830757669173181 36
+> Count 2 time : 0.004983992257621139 36
 
-### Big O
+- But for big lists it makes a big difference
 
+> listExamples.perf_check_random(500)
+> List length: 500
+> Count 1 time : 0.03003369679208845 381
+> Count 2 time : 0.006122982653323561 381
+> listExamples.perf_check_random(5000)
+> List length: 5000
+> Count 1 time : 2.237111685331911 3803
+> Count 2 time : 0.0075630900682881474 3803
+> listExamples.perf_check_random(50000)
+
+- For lists of length 50000, the second method is 10000 times faster
+
+> List length: 50000
+> Count 1 time : 231.77267158718314 37429
+> Count 2 time : 0.025658405560534447 37429
+
+- Both algorithms are _correct_
+- At high-level pseudocode, they look similar
+- But (when implemented in Python) their runtimes are significantly different on large lists
+
+## Big O (The Upper Bound)
+
+- We use the Big-Oh notation to restrict the functions we need to deal with
+- Any polynomial with highest degree k is O(n<sup>k)
+  - Big Oh gives an upper bound on the growth rate of the function•any function that is O(n<sup>k</sup>) is also O(n<sup>k+1</sup>)
+
+### The Standard Functions
+
+- We will consider **7 standard functions** to describe theworst-case upper bounds
+  - **Constant**
+  - **Logarithmic**
+  - **Linear**
+  - **Log linear**
+  - **Quadratic**
+  - **Cubic**
+  - **Exponential**
+
+#### Constant
+
+- f(n) = c, for some fixed constant value c
+- The running time of the function is independent of thesize of the input
+- E.g. a function which returns the value in the first position in a list
+  - Doesn't matter how long the list is
+  - We say such a function is O(1)
+
+#### Logarithmic
+
+- f(n) = log<sub>b</sub>n, for some fixed constant value b
+- The log of a number is the power to which the base must be raised to give the number
+- log<sub>b</sub>n = x if and only if b<sup>x</sup> = n
+
+![](https://i.gyazo.com/675355d21e931655e25fd9c13721eaaa.png)
+
+#### Linear
+
+- f(n) = n
+- Typically, this comes from an algorithm with a single loop that iterates over each element of an input list
+
+#### Log Linear
+
+- f(n) = n log n
+- We will see later a number of sorting algorithms with complexity O(n log n)
+- Typically, the algorithm is doing something like binary search, but repeating it once for each element in the list
+
+#### Quadratic
+
+- f(n) = n<sup>2</sup>
+- Typically this comes from algorithms with a nested loopwhere we are iterating over the same structure
+
+#### Cubic
+
+- f(n) = n<sup>3</sup>
+- Typically this comes from algorithms with a doubly nested loop where we are iterating over the same structure
+- We can go higher, to any arbitrary degree
+- Very few of the algorithms we will consider in this modulehave run time approaching this complexity
+
+#### Exponential
+
+- f(n) = c<sup>n</sup>, for some constant c
+- Typically this comes from algorithms with a loop where the number of operations increases by a factor of c each time round the loop
+- Algorithms with exponential running time are considered inefficient, although we will see some practical algorithms of this sort later in the degree program
+
+![](https://i.gyazo.com/59634109a68a29c81a85ed7e219854f9.png)

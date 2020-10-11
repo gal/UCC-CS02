@@ -74,10 +74,14 @@
       - [Intersection](#intersection)
       - [Set-Difference (Minus)](#set-difference-minus)
       - [Cross-Product (Times)](#cross-product-times)
+    - [Relational Querys](#relational-querys)
     - [Joins](#joins-1)
       - [Nested Loop Joins](#nested-loop-joins)
       - [Natural Join](#natural-join)
-    - [Relational Querys](#relational-querys)
+    - [Outer Join](#outer-join)
+      - [Left Outer Join](#left-outer-join)
+      - [Right Outer Join](#right-outer-join)
+      - [Full Outer Joins](#full-outer-joins)
 
 </details>
 
@@ -975,6 +979,14 @@ ALTER TABLE Students ADD COLUMN firstYear
 - Result schema has one field per field of S1 and R1, with field names "inherited" if possible
   - **Conflict**: Both S1 and R1 have a field called sid
 
+### Relational Querys
+
+![](https://i.gyazo.com/abb0b9c81bff2cd81c6e0fa163795908.png)
+
+- Find the names of sailors whos reserved boat #103
+- **Solution**
+  - $\pi$<sub>sname</sub>(($\sigma$<sub>bid=103</sub>Reserves)$\bowtie$Sailors)
+
 ### Joins
 
 - **Conditional Join**:
@@ -1005,11 +1017,26 @@ ALTER TABLE Students ADD COLUMN firstYear
   - The selection s checks equality of all common attributes
   - The projection eliminates the duplicate common attributes
 
-### Relational Querys
+### Outer Join
 
-- **DB Example**
-  <!-- - TODO: Check slide -->
+- In an outer join, along with tuples that satisfy the matching criteria, we also include some or all tuples that do not match the criteria
+  - Left Outer join
+  - Right Outer Join
+  - Full Outer Join
 
-  {
+#### Left Outer Join
 
-  }
+- In the left outer join, operation allows keeping all tuple in the left relation
+- If there is no matching tuple is found in right relation, then the attributes of right relation in the join result are filled with null values
+- A'
+
+#### Right Outer Join
+
+- In the right outer join, operation allows keeping all tuple in the right relation
+- If there is no matching tuple is found in the left relation, then the attributes of the left relation in the join result are filled with null values
+- B'
+
+#### Full Outer Joins
+
+- In a full outer join, all tuples from both relations are included in the result, irrespective of the matching condition
+- MySQL does not support this operation
