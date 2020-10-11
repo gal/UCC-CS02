@@ -138,3 +138,16 @@ for each element of arr
   if element != 0
     return false
 ```
+
+---
+
+# CS2515 Week 2
+
+## Complexity Analysis
+<!-- TODO: Check slides -->
+
+
+### Worse-case upper bound
+
+### Big O
+

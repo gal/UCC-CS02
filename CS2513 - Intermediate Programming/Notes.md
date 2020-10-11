@@ -18,8 +18,17 @@
   - [Python vs Purely Object Oriented Languages](#python-vs-purely-object-oriented-languages)
 - [CS2513 Week 2](#cs2513-week-2)
   - [Encapsulation](#encapsulation)
-  - [What is a Class](#what-is-a-class)
-  - [What is an Object](#what-is-an-object)
+    - [What is a Class](#what-is-a-class)
+    - [What is an Object](#what-is-an-object)
+  - [Our First Class](#our-first-class)
+      - [Destruction](#destruction)
+      - [Instantiation](#instantiation)
+      - [Default Constructors](#default-constructors)
+    - [The Constructor](#the-constructor)
+      - [Instantiating Objects with **\_\_init\_\_**](#instantiating-objects-with-__init__)
+    - [Self](#self)
+  - [Abstraction](#abstraction)
+    - [Scope of Data](#scope-of-data)
 
 </details>
 
@@ -232,8 +241,8 @@
 
 - Languages such as **Java** are purely **Object Oriented**
   - Enforces the **Principles of Object Oriented** strictly
-- **Python** doesnt require **Object Oriented** to be used
-- **Python** emphasises freedom to use the language in any way
+- **Python** doesn't require **Object Oriented** to be used
+- **Python** emphasizes freedom to use the language in any way
   - Developers implement **Encapsulation** based on trust
 - **Python** provides more **Object Oriented** features than **Java** in some ways
   - Allows the use of **Multiple Inheritance** and other features
@@ -245,13 +254,13 @@
 ## Encapsulation
 
 - First and most basic principle of OOP
-- Describes real world entities (**Classes**) in terms of behaviours (**Methods** - actions) and states (**Attributes** - details)
-- Change state through the use of **behaviours**
+- Describes real world entities (**Classes**) in terms of behaviors (**Methods** - actions) and states (**Attributes** - details)
+- Change state through the use of **behaviors**
   - Makes code more **robust** by controlling how and when an attribute is changed
   - Means we can **parallelise** work easily
   - Allows the code to be loosely bound
 
-## What is a Class
+### What is a Class
 
 - A class is a special **Datatype** which defines how to **build** a certain kind of **object**
 - The class also stores some **data items** that are shared by all the **instances** of this class
@@ -259,11 +268,105 @@
 - Python **doesn't** use separate class interface definitions as in some languages
   - You just define the class then use it
 
-## What is an Object
+### What is an Object
 
 - Objects are the basic run-time entities in an object-oriented system
 - They may represent a person, a place, a bank account, a table of data or any item that the program must handle
 - When a program is executed the objects interact by sending messages to one another
 - Objects have two components
   - Data (i.e Attributes)
-  - Behaviours (i.e Methods)
+  - Behaviors (i.e Methods)
+
+<!--
+## Our First Class
+
+```python
+class Person:
+    def __init__(self, name, age, salary):
+        self._name = name
+        self._age = age
+        self._salary = salary
+``` -->
+
+#### Construction
+
+```Python
+def function:
+  ClassOne c1
+```
+
+- The **Constructor** is called when an object is created.
+- This is used to initialize the object
+  - Load values into member variables
+  - Open files
+  - Connect to hardware, databases, networks, etc
+
+#### Destruction
+
+- The **Destructor** is called when an object goes out of **_scope_**
+- Object c1 is created when the progran reaches the first line of the function
+  - It is then destroyed when the program leaves the function
+
+#### Instantiation
+
+- The object c1 is created in memory
+- When it is created its constructor is called to do any necessary initializing
+  - Here the constructor is empty so nothing is done
+- The constructor can take any number of arguments like any other function but it cannot _return_ any values
+  - Essentially the return value is the **object itself**
+- If there are multiple constructors the compiler chooses the correct one based on the arguments given
+
+#### Default Constructors
+
+- Every class has constructors and destructors
+  - If you dont define them then empty ones that do nothing will be created by the complier
+- You must define your own constructors when you want to initialize an object with arguments
+
+### The Constructor
+
+- The \_\_init\_\_ method is also known as a constructor
+  - It is always called \_\_init\_\_
+- The constructor is called when we create a new instance of a class
+  - It used its instance attributes (the objects **_state_**) and gives them some initial values
+- It is _"just"_ a function, It is called when we **_instantiate_** an object
+- We can use it just like a function, providing default arguments, etc
+
+#### Instantiating Objects with **\_\_init\_\_**
+
+- \_\_init\_\_ is the default constructor
+  - Used to begin constructing the class (Initializing)
+  - It can take any number of arguments
+- The first argument of **_self_** in the definition of \_\_init\_\_ is **special**
+
+### Self
+
+- The first argument of every method is a reference to the **current instance** of the class
+  - By convention, we name this argument **self**
+- In \_\_init\_\_, **self** refers to the object currently being created
+  - So in other class methods, it refers to the instance whose method was called
+- Simular to the keyword **_this_** in Java or C++
+  - Python uses **_self_** more often than Java uses **_this_**
+- You do not give a value for this parameter when you call the method
+  - Python will provide it for you
+
+## Abstraction
+
+- **Encapsulation** and **Abstraction** are both used to hide data in some way
+  - Generally speaking Encapsulation is the mechanism for **restricting access** to some of an objects components
+- This means the internal representation of an object cant be seen from outside the objects definition
+- Access to this data is typically only achieved through the use of special methods (**Getters** and **Setters**)
+  - By using solely get() and set() methods, we can make sure that the internal data cannot be accidentally set into an inconsistent or invalid state
+
+### Scope of Data
+
+- **Public**
+  - Can be accessed anywhere inside or outside the class once it has been initialized
+    - Notation: name (no special notation)
+- **Protected**
+  - Can be accessed anywhere within the same package
+  - Like a Public member but they represent data that **should not** be directly accessed from the outside (but still _can_ be)
+    - Notation: \_name (single underline)
+- **Private**
+  - Can only be accessed inside the same class
+  - **Cant** be seen or accessed from outside the class
+    - Notation: \_\_name (double underline)
