@@ -12,6 +12,9 @@
   - [Boolean Algebra](#boolean-algebra)
     - [Rules](#rules)
     - [Boolean Algebra vs Numerical Algebra](#boolean-algebra-vs-numerical-algebra)
+- [Week 3](#week-3)
+  - [Example: Majority Decoder](#example-majority-decoder)
+    - [Truth Table](#truth-table)
 
 </details>
 
@@ -107,3 +110,26 @@
 - Both $+$ and $*$ are distributive with respect to the other operation
 - Neither $+$ nor $*$ have an **inverse** operation
   - e.g. **Subtraction** and **Division** does not exist
+
+# Week 3
+
+## Example: Majority Decoder
+
+![](https://media.discordapp.net/attachments/471231303317192735/765516715421335562/output-onlinepngtools_5.png)
+
+- 3 inputs
+  - **A**
+  - **B**
+  - **C**
+- One output **Y**
+  - Shall assume that value which is carried by the **majority** of inputs
+    - Therefore **Y** assumes **1** if two **or** all three inputs are **1**
+      - (Atleast 2)
+
+### Truth Table
+
+![](https://media.discordapp.net/attachments/471231303317192735/765533477222481970/output-onlinepngtools_6.png)
+
+- $Y$ $=$ $($$\neg$$A$ $\ast$ $B$ $\ast$ $C$$)$ $+$ $($$A$ $\ast$ $\neg$$B$ $\ast$ $C$$)$ $+$ $($$A$ $\ast$ $B$ $\ast$ $\neg$$C$$)$ $+$ $($$A$ $\ast$ $B$ $\ast$ $C$$)$
+- Can be simplified to
+- $Y$ $=$ $($$A$ $\ast$ $B$$)$ $+$ $($$A$ $\ast$ $C$$)$ $+$ $($$B$ $\ast$ $C$$)$
