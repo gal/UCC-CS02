@@ -222,7 +222,7 @@ def unique_check2(inputlist):
 
 ### The Standard Functions
 
-- We will consider **7 standard functions** to describe theworst-case upper bounds
+- We will consider **7 standard functions** to describe the worst-case upper bounds
   - **Constant**
   - **Logarithmic**
   - **Linear**
