@@ -217,7 +217,7 @@ def unique_check2(inputlist):
 ## Big O (The Upper Bound)
 
 - We use the Big-Oh notation to restrict the functions we need to deal with
-- Any polynomial with highest degree k is O(n<sup>k)
+- Any polynomial with highest degree k is O(n<sup>k</sup>)
   - Big Oh gives an upper bound on the growth rate of the function•any function that is O(n<sup>k</sup>) is also O(n<sup>k+1</sup>)
 
 ### The Standard Functions
