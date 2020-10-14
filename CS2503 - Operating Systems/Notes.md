@@ -18,6 +18,15 @@
       - [Pipes](#pipes)
         - [Uses of Pipes](#uses-of-pipes)
         - [Brief note of Grep & Find](#brief-note-of-grep--find)
+- [CS2503 Week 3](#cs2503-week-3)
+  - [Handy file system arguements](#handy-file-system-arguements)
+    - [mkdir (Make Directory)](#mkdir-make-directory)
+    - [ls (List Contents of Directory)](#ls-list-contents-of-directory)
+    - [rm (Remove files)](#rm-remove-files)
+    - [rmdir (Remove Directory)](#rmdir-remove-directory)
+  - [Links & Underlying file system](#links--underlying-file-system)
+    - [Inodes](#inodes)
+    - [ln (Link)](#ln-link)
       _ [Uses of Pipes](#uses-of-pipes)
       _ [Brief note of Grep & Find](#brief-note-of-grep---find)
 
@@ -252,3 +261,51 @@
     - **File names**, by **piping** just **output** from "ls"
   - Run much **slower** than **locate**, as it works through the **filesystem** when called
   - Is more **flexible** than locate, which only works on pre-indexed filenames
+
+# CS2503 Week 3
+
+## Handy file system arguements
+
+### mkdir (Make Directory)
+
+- Requires write permission
+- p $\to$ allows for "missing" parent directories to be created
+
+### ls (List Contents of Directory)
+
+- a $\to$ List all entries, without this, hidden system files beginning with a "." are not listed
+- c $\to$ Sort on time of last edit
+- l $\to$ List in "long" form, giving mode, number of links, owner, size, and time of last modification
+- 1 $\to$ as "l", with no header line, a line per file
+  - Best for scripts
+- R $\to$ Recursively list subdirectories encountered
+- s $\to$ Give size of file in kilobytes
+- t $\to$ Sort by time modified, latest first
+
+### rm (Remove files)
+
+- f $\to$ Force files to be removed without displaying permissions, asking questions, or reporting errors
+- i $\to$ Interactive, ask before removing each file
+- r $\to$ Recursively delete the contents of a directory, its subdirectories, and the directory itself
+
+### rmdir (Remove Directory)
+
+- Removes empty directories by default
+- Use rm -r $\to$ to remove the file tree recursively
+
+## Links & Underlying file system
+
+### Inodes
+
+- Indode (Index Node on the disk)
+  - Pointed to by a directory entry file
+  - Points to file blocks on the disk
+  - Limited number (of blocks and inodes)
+    - Can block new files, showing disk full
+      - The disk may not be full, just the inodes all used
+
+### ln (Link)
+
+- Create a pseudonym (alias) for an existing file
+- **Hard Links** are default, they create a pointer to the file (actually to the file's inode which points to file)
+- **Symbolic** or **Soft Links** create an indirect pointer to the file via the pathname (i.e. filename)
