@@ -187,28 +187,28 @@ def unique_check2(inputlist):
 
 - Difference in running time for small lists doesn't matter
 
-> listExamples.perf_check_random(50)
-> List length: 50
-> Count 1 time : 0.005830757669173181 36
-> Count 2 time : 0.004983992257621139 36
+> listExamples.perf_check_random(50)</n>
+> List length: 50</n>
+> Count 1 time : 0.005830757669173181 36</n>
+> Count 2 time : 0.004983992257621139 36</n>
 
 - But for big lists it makes a big difference
 
-> listExamples.perf_check_random(500)
-> List length: 500
-> Count 1 time : 0.03003369679208845 381
-> Count 2 time : 0.006122982653323561 381
-> listExamples.perf_check_random(5000)
-> List length: 5000
-> Count 1 time : 2.237111685331911 3803
-> Count 2 time : 0.0075630900682881474 3803
-> listExamples.perf_check_random(50000)
+> listExamples.perf_check_random(500)</n>
+> List length: 500</n>
+> Count 1 time : 0.03003369679208845 381</n>
+> Count 2 time : 0.006122982653323561 381</n>
+> listExamples.perf_check_random(5000)</n>
+> List length: 5000</n>
+> Count 1 time : 2.237111685331911 3803</n>
+> Count 2 time : 0.0075630900682881474 3803</n>
+> listExamples.perf_check_random(50000)</n>
 
 - For lists of length 50000, the second method is 10000 times faster
 
-> List length: 50000
-> Count 1 time : 231.77267158718314 37429
-> Count 2 time : 0.025658405560534447 37429
+> List length: 50000</n>
+> Count 1 time : 231.77267158718314 37429</n>
+> Count 2 time : 0.025658405560534447 37429</n>
 
 - Both algorithms are _correct_
 - At high-level pseudocode, they look similar
