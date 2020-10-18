@@ -24,6 +24,11 @@
       - [Quadratic](#quadratic)
       - [Cubic](#cubic)
       - [Exponential](#exponential)
+- [CS2515 Week 3](#cs2515-week-3)
+  - [The Stack](#the-stack)
+    - [Postfix](#postfix)
+  - [The Stack in Python](#the-stack-in-python)
+    - [Evaluate String](#evaluate-string)
 
 </details>
 
@@ -277,3 +282,85 @@ def unique_check2(inputlist):
 - Algorithms with exponential running time are considered inefficient, although we will see some practical algorithms of this sort later in the degree program
 
 ![](https://i.gyazo.com/59634109a68a29c81a85ed7e219854f9.png)
+
+# CS2515 Week 3
+
+## The Stack
+
+- Used for storing groups of data
+- ADT, Imagine it like a stack of books
+- **Push**
+  - You push to the stack and it grows from the bottom e.g [3,5,6] push(2) $=$ [2,5,6] (pushes all items up and puts new item at the start/"bottom")
+- **Pop**
+  - You pop from the stack and it grabs the item at the "bottom" of the stack (most recent)
+
+### Postfix
+
+- Artimatic notation for the stack
+  - Uses stack as temp container, read left to right
+  - e.g 3 5 + 2 \*
+    - 3 (push), 5 (push)
+    - $+$ (takes 2 inputs, pops from stack)
+    - 3+5 = 8 (push), 2 (push)
+    - $\ast$ (takes 2 inputs, pops from stack)
+    - 8\*2 = 16 (answer)
+
+## The Stack in Python
+
+- Using lists/arrays with a **Stack** class (Top of stack is the end of the array, more efficient)
+
+```Python
+class Stack:
+
+  def __init__ (self):
+    self.alist = []
+
+  def push (self, element):
+    self.alist.append(element)
+
+  def pop (self):
+    return self.alist.pop()
+
+  def top (self):
+    if len(self.alist) == 0:
+      return None
+    return self.alist[-1]
+
+  def length(self):
+    return len(self.alist)
+```
+
+### Evaluate String
+
+```Python
+def evaluate (string):
+  # Evaluate postfix expressions, using a stack.
+  # Input must be a string, with a space between each item
+
+  # Split string into tokens
+  # Create a stack
+  # for each item
+    # if it's an operator
+      # pop two items from stack
+      # push eval (2nd op 1st) onto stack
+    # else
+      # push token onto stack
+
+tokenlist = string.split();
+stack = Stack();
+for token in tokenlist:
+  if token in ["+","-","*","/"];
+    second = stack.pop();
+    first = stack.pop();
+    if token == "+":
+      stack.push(first + second)
+    elif token == "-":
+      stack.push(first - second)
+    elif token == "*":
+      stack.push(first * second)
+    else:
+      stack.push(first/second)
+  else:
+      stack.push(int(token))
+return stack.pop()
+```
